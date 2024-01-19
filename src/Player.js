@@ -21,7 +21,7 @@ export function Player({ lerp = THREE.MathUtils.lerp }) {
     const { forward, backward, left, right, jump } = get()
     const velocity = ref.current.linvel()
     // update camera
-    // state.camera.position.set(...ref.current.translation())
+    state.camera.position.set(...ref.current.translation())
     // update axe
     axe.current.children[0].rotation.x = lerp(axe.current.children[0].rotation.x, Math.sin((velocity.length() > 1) * state.clock.elapsedTime * 10) / 6, 0.1)
     axe.current.rotation.copy(state.camera.rotation)
